@@ -10,14 +10,12 @@ class Solution {
             if (r2 + 1 < n && c2 + 1 < n) diff[r2+1][c2+1] += 1;
         }
         
-        // Row-wise prefix sum
         for (int i = 0; i < n; ++i) {
             for (int j = 1; j < n; ++j) {
                 diff[i][j] += diff[i][j-1];
             }
         }
         
-        // Column-wise prefix sum
         for (int j = 0; j < n; ++j) {
             for (int i = 1; i < n; ++i) {
                 diff[i][j] += diff[i-1][j];
